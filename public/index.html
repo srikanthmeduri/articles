@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+    .navbar {
+        border-radius: 0;
+    }
+    h1 {
+        text-align: center
+    }
+    ul.articles li:not(:last-child) {
+        border-bottom: 1px solid #ccc
+    }
+    </style>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+</head>
+
+<body ng-app="articles">
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="#">App</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a ui-sref="all">Articles</a>
+            </li>
+            <li><a ui-sref="create">Create</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div ui-view></div>
+    </div>
+    <script src="modules/articles.js"></script>
+    <script src="modules/routes.js"></script>
+    <script src="modules/controllers.js"></script>
+    <script src="modules/services.js"></script>
+</body>
+
+</html>
