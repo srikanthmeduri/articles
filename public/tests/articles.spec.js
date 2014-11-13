@@ -18,8 +18,8 @@
             });
 
             beforeEach(function() {
-                module('mean');
-                module('mean.system');
+                // module('mean');
+                // module('mean.system');
                 module('articles');
             });
 

@@ -15,6 +15,9 @@ console.log(config.database);
 mongoose.connect(config.database); // connect to our database
 
 var env = process.env.NODE_ENV || 'development';
+
+console.log(env);
+
 if ('development' == env) {
     //app.use(morgan('dev')); 	// log every request to the console
 }

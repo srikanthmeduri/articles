@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('ArticlesController', ['$scope', '$stateParams', '$location', 'ArticleService',
+angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Articles',
     function($scope, $stateParams, $location, Articles) {
 
         $scope.create = function(isValid) {

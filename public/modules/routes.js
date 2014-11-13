@@ -1,7 +1,7 @@
 'use strict';
 
-app.config(['$stateProvider',
-    function ($stateProvider) {
+angular.module('articles').config(['$stateProvider',
+    function($stateProvider) {
         $stateProvider
             .state('all', {
                 url: '/articles',

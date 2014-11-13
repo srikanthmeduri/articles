@@ -5,4 +5,6 @@ bower install
 
 npm install
 
-node server
+npm start
+
+npm test

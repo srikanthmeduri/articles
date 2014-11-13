@@ -3,9 +3,9 @@
 /**
  * Module dependencies.
  */
-var mongoose = require('mongoose'),
-    Article = require('./models'),
-    _ = require('lodash');
+//var mongoose = require('mongoose');
+var Article = require('./models');
+var _ = require('lodash');
 
 
 

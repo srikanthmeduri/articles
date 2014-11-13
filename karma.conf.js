@@ -20,7 +20,9 @@ module.exports = function(config) {
             "public/bower_components/angular/angular.js",
             "public/bower_components/angular-mocks/angular-mocks.js",
             "public/bower_components/angular-resource/angular-resource.js",
-            "public/bower_components/angular-ui-router/release/angular-ui-router.js"
+            "public/bower_components/angular-ui-router/release/angular-ui-router.js",
+            'public/modules/*.js',
+            'public/tests/*.js'
         ],
 
         // list of files to exclude
@@ -40,7 +42,7 @@ module.exports = function(config) {
 
         coverageReporter: {
             type: 'html',
-            dir: 'test/coverage/'
+            dir: 'testCoverageReport/'
         },
 
         // web server port
@@ -64,7 +66,7 @@ module.exports = function(config) {
         // - Safari (only Mac)
         // - PhantomJS
         // - IE (only Windows)
-        browsers: ['Chrome'],
+        browsers: ['PhantomJS'],
 
         // If browser does not capture in given timeout [ms], kill it
         captureTimeout: 60000,

@@ -1,10 +1,18 @@
 'use strict';
 
 var paths = {
-    js: ['server/tests/serverSpec.js']
+    serverSpec: ['server/tests/serverSpec.js'],
+    js: ['server/modules/*.js', 'public/modules/*.js']
 };
 
 module.exports = function(grunt) {
+
+    console.log(process.env.NODE_ENV);
+
+    if (process.env.NODE_ENV !== 'production') {
+        require('time-grunt')(grunt);
+    }
+
     // Project Configuration
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -15,11 +23,19 @@ module.exports = function(grunt) {
                     'app.js'
                 ]
             },
-            src: paths.js
+            src: paths.serverSpec
         },
         karma: {
             unit: {
                 configFile: 'karma.conf.js'
+            }
+        },
+        jshint: {
+            all: {
+                src: paths.js,
+                options: {
+                    jshintrc: true
+                }
             }
         }
     });
@@ -29,5 +45,8 @@ module.exports = function(grunt) {
 
     //Test task.
     grunt.registerTask('test', ['mochaTest', 'karma:unit']);
+
+    //js linting
+    //grunt.registerTask('lint', ['jshint']);
 
 };
